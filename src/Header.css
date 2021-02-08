@@ -41,4 +41,9 @@
   .header__icons {
     display: flex;
     padding-right: 20px;
+    padding: 10px;
+  }
+
+  .header__icons:hover{
+      cursor: pointer;
   }

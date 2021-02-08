@@ -17,15 +17,14 @@ function index() {
         />
         <span>Drive</span>
       </div>
-      <div className="header__middle"></div>
-      <SearchIcon />
-      <input type="text" placeholder="Search in Drive" />
-      <ExpandMoreIcon />
+      <div className="header__middle">
+        <SearchIcon />
+        <input type="text" placeholder="Search in Drive" />
+        <ExpandMoreIcon />
+      </div>
       <div className="header__icons">
-        <span>
-          <HelpOutlineIcon />
-          <SettingsIcon />
-        </span>
+        <HelpOutlineIcon />
+        <SettingsIcon />
         <AppsIcon />
         <Avatar />
       </div>
