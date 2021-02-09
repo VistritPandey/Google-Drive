@@ -47,3 +47,9 @@
   .header__icons:hover{
       cursor: pointer;
   }
+
+  .header__icons > .MuiSvgIcon-root {
+    font-size: 28px;
+    color: rgb(82, 82, 82);
+    margin: 4px;
+  }
