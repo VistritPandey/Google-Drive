@@ -1,0 +1,16 @@
+.sidebarItem {
+    display: flex;
+    padding: 10px 0;
+    border-radius: 0 100px 100px 0;
+
+}
+
+.sidebarItem:hover {
+    background-color: rgb(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.sidebarItem_arrow{
+    width: 28px;
+    margin-left: 12px;
+}
