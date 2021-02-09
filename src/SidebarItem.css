@@ -14,3 +14,11 @@
     width: 28px;
     margin-left: 12px;
 }
+
+.sidebarItem__main{
+    display: flex;
+}
+
+.sidebarItem__main>p {
+    margin-left: 12px;
+}
