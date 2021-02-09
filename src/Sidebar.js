@@ -1,10 +1,14 @@
 import React from "react";
+import NewFile from "./NewFile";
 import "./Sidebar.css";
 
 function Sidebar() {
   return (
     <div className="sidebar">
-      <h1>Sidebar</h1>
+      <NewFile />
+      <div className="sidebar__itemsContainer">
+        <hr />
+      </div>
     </div>
   );
 }
