@@ -7,7 +7,7 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import AppsIcon from "@material-ui/icons/Apps";
 import { Avatar } from "@material-ui/core";
 
-function index() {
+function Header({ userPhoto }) {
   return (
     <div className="header">
       <div className="header__left">
@@ -26,10 +26,10 @@ function index() {
         <HelpOutlineIcon />
         <SettingsIcon />
         <AppsIcon />
-        <Avatar />
+        <Avatar src={userPhoto} />
       </div>
     </div>
   );
 }
 
-export default index;
+export default Header;
