@@ -1,0 +1,25 @@
+.fileItem {
+    height: 55px;
+    border-bottom: 1px solid #cccccc;
+    width: 100%;
+  }
+  
+  .fileItem > a {
+    height: 100%;
+    display: flex;
+    text-decoration: none;
+    color: rgb(78, 78, 78);
+  }
+  
+  .fileItem > a > div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .fileItem--left {
+    flex: 1;
+  }
+  
+  .fileItem--right > p {
+    margin-right: 10px;
+  }

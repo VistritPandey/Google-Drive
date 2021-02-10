@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./FilesView.css";
 import { db } from "./firebase";
 import FileCard from "./FileCard";
+import FileItem from "./FileItem";
 
 function FilesView() {
   const [files, setFiles] = useState([]);
