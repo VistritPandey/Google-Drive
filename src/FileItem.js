@@ -19,7 +19,7 @@ const monthNames = [
 
 const FileItem = ({ id, caption, timestamp, fileUrl, size }) => {
   const fileDate = `${timestamp?.toDate().getDate()} ${
-    monthNames[timestamp?.toDate().getMonth() + 1]
+    monthNames[timestamp?.toDate().getMonth()]
   } ${timestamp?.toDate().getFullYear()}`;
 
   const getReadableFileSizeString = (fileSizeInBytes) => {
