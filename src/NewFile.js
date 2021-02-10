@@ -8,9 +8,9 @@ import { makeStyles } from "@material-ui/core/styles";
 
 function getModalStyle() {
   return {
-    top: `50%`,
-    left: `50%`,
-    transform: `translate(-50%, -50%)`,
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
   };
 }
 
@@ -18,15 +18,16 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     position: "absolute",
     width: 400,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "#ffffff",
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
+    padding: theme.spacing(2, 3, 4),
   },
 }));
 
-function NewFile() {
+const NewFile = () => {
   const classes = useStyles();
+
   const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState(null);
@@ -48,22 +49,28 @@ function NewFile() {
 
   const handleUpload = () => {
     setUploading(true);
+
     storage
       .ref(`files/${file.name}`)
       .put(file)
       .then((snapshot) => {
         console.log(snapshot);
+
         storage
           .ref("files")
           .child(file.name)
           .getDownloadURL()
           .then((url) => {
             db.collection("myFiles").add({
-              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
               caption: file.name,
               fileUrl: url,
               size: snapshot._delegate.bytesTransferred,
+              timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             });
+
+            setUploading(false);
+            setOpen(false);
+            setFile(null);
           });
       });
   };
@@ -71,9 +78,10 @@ function NewFile() {
   return (
     <div className="newFile">
       <div className="newFile__container" onClick={handleOpen}>
-        <AddIcon />
+        <AddIcon fontSize="large" />
         <p>New</p>
       </div>
+
       <Modal
         open={open}
         onClose={handleClose}
@@ -81,9 +89,9 @@ function NewFile() {
         aria-describedby="simple-modal-description"
       >
         <div style={modalStyle} className={classes.paper}>
-          <p>Select File to upload</p>
+          <p>Select files to upload</p>
           {uploading ? (
-            <p>Uploading...</p>
+            <p>Uploading....</p>
           ) : (
             <>
               <input type="file" onChange={handleChange} />
@@ -94,6 +102,6 @@ function NewFile() {
       </Modal>
     </div>
   );
-}
+};
 
 export default NewFile;
