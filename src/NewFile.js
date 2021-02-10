@@ -1,5 +1,6 @@
 import React from "react";
 import AddIcon from "@material-ui/icons/Add";
+import "./NewFile.css";
 
 function NewFile() {
   return (
