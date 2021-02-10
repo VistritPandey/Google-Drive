@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
-
+import FilesView from "./FilesView";
 function App() {
   const [user, setUser] = useState({
     displayName: "Vistrit Pandey",
@@ -17,6 +17,7 @@ function App() {
     <div className="App">
       <Header userPhoto={user.photoURL} />
       <Sidebar />
+      <FilesView />
     </div>
   );
 }
