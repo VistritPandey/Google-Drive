@@ -9,8 +9,19 @@ import QueryBuilderIcon from "@material-ui/icons/QueryBuilder";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import StorageIcon from "@material-ui/icons/Storage";
+import { useDispatch } from "react-redux";
+import { Button } from "@material-ui/core";
+import { logout } from "./features/userSlice";
+import { auth } from "./firebase";
 
 function Sidebar() {
+  const dispatch = useDispatch();
+  const signOut = () => {
+    auth.signOut().then(() => {
+      dispatch(logout());
+    });
+  };
+
   return (
     <div className="sidebar">
       <NewFile />
@@ -23,6 +34,11 @@ function Sidebar() {
         <SidebarItem icon={<DeleteOutlineIcon />} label={"Bin"} />
         <hr />
         <SidebarItem icon={<StorageIcon />} label={"Storage"} />
+      </div>
+      <div className="sidebar__foot">
+        <Button onClick={signOut} variant="contained" color="secondary">
+          Logout
+        </Button>
       </div>
     </div>
   );
