@@ -12,6 +12,10 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .sideIcons__top,.sideIcons__plusIcon:hover{
+    cursor: pointer;
+  }
   
   .sideIcons__top > img {
     object-fit: contain;

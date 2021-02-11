@@ -5,6 +5,10 @@
     border: 1px solid #cccccc80;
     margin: 5px;
   }
+
+  .fileCard:hover{
+    cursor: pointer;
+  }
   
   .fileCard--bottom {
       display: flex;
